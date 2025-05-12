@@ -6,11 +6,10 @@ import 'package:food_app/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
-  
-  get dummyMeals => null;
 
   void _selectCategory(BuildContext context,Category category) {
 
+   var dummyMeals;
    final filteredMeals = dummyMeals.where((meal) => meal.categories.contains(category.id)).toList();
 
     Navigator.of(context).push(MaterialPageRoute(
@@ -28,10 +27,10 @@ class CategoriesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
 
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           childAspectRatio: 3 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20
         ),
         children: [
           //availableCategories.map((category)=> CategoryGridItem(category: category)).toList()
